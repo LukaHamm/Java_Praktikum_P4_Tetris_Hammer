@@ -47,7 +47,7 @@ public class Spielfeld {
         HashMap<Block, Diamantblock> blockMap = new HashMap<>();
         for (int i = 0; i < 10; i++) {
             int blockzaehler = 0;
-            for (int j = 0; j < 20; j++) {
+            for (int j = 19; j >= 0; j--) {
                 Block spielblock = this.spielfeld_blockliste[j][i];
                 if (blockzaehler >= 8 && spielblock != null) {
                     int x = spielblock.getX();
@@ -56,9 +56,10 @@ public class Spielfeld {
                     this.spielfeld_blockliste[j][i] = diamantblock;
                     blockMap.put(spielblock, diamantblock);
                 }
-                if (spielblock != null) {
-                    blockzaehler++;
+                if (spielblock == null) {
+                    break;
                 }
+                blockzaehler++;
 
             }
         }
@@ -142,7 +143,7 @@ public class Spielfeld {
         for (Block block : blockListe) {
             if (block != null) {
                 if (block.getY() + Block.BLOCK_SIZE > Block.BLOCK_SIZE * 24
-                    || block.getX() + Block.BLOCK_SIZE > 10 * Block.BLOCK_SIZE || block.getY() < 0
+                    || block.getX() + Block.BLOCK_SIZE > 10 * Block.BLOCK_SIZE || block.getY() < 4
                     || block.getX() < 0) {
                     return false;
                 }

@@ -8,47 +8,12 @@ public class Form {
 
     private Color farbe;
 
-    protected static final Block [][] GERADE_BLOCKLISTE = {{new Block(Block.BLOCK_SIZE*5,0),null,null,null,null},
-                                                        {new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE),null,null,null,null},
-                                                        {new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*2),null,null,null,null},
-                                                        {new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*3),null,null,null,null},
-                                                        {null,null,null,null,null}};
+    protected static final Block [] DEFAULT_BLOCKS = {
+            new Block(Block.BLOCK_SIZE * 5, 0),
+            new Block(Block.BLOCK_SIZE * 5, Block.BLOCK_SIZE),
+            new Block(Block.BLOCK_SIZE * 5, Block.BLOCK_SIZE * 2),
+            new Block(Block.BLOCK_SIZE * 5, Block.BLOCK_SIZE * 3)};
 
-    protected static final Block [][] QUADRAT_BLOCKLISTE = {{null,new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*2),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*2),null,null},
-                                                         {null,new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*3),null,null},
-                                                         {null,null,null,null,null},
-                                                         {null,null,null,null,null},
-                                                         {null,null,null,null,null}};
-
-    protected static final Block [][] PYRAMIDE_BLOCKLISTE = {{null,null,new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*2),null,null},
-                                                         {null,new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*7,Block.BLOCK_SIZE*3),null},
-                                                         {null,null,null,null,null},
-                                                         {null,null,null,null,null},
-                                                         {null,null,null,null,null}};
-
-    protected static final Block [][] L_FORM_BLOCKLISTE = {{new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE),null,null,null,null},
-                                                        {new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*2),null,null,null,null},
-                                                        {new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*3),null,null,null},
-                                                        {null,null,null,null,null},
-                                                        {null,null,null,null,null}};
-
-    protected static final Block [][] L_FORM_INVERTIERT_BLOCKLISTE = { {null,new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE),null,null,null},
-                                                                    {null,new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*2),null,null,null},
-                                                                    {new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*3),null,null,null},
-                                                                    {null,null,null,null,null},
-                                                                    {null,null,null,null,null}};
-
-    protected static final Block [][] ZFORM_FORM_BLOCKLISTE = {{new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*2),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*2),null,null,null},
-            {null,null,new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*7,Block.BLOCK_SIZE*3),null},
-            {null,null,null,null,null},
-            {null,null,null,null,null},
-            {null,null,null,null,null}};
-
-    protected static final Block [][] ZFORM_FORM_INVERTIERT_BLOCKLISTE = {{null,null,new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*2),new Block(Block.BLOCK_SIZE*7,Block.BLOCK_SIZE*2),null},
-                                                                        {null,null,new Block(Block.BLOCK_SIZE*5,Block.BLOCK_SIZE*3),new Block(Block.BLOCK_SIZE*6,Block.BLOCK_SIZE*3),null},
-                                                                        {null,null,null,null,null},
-                                                                        {null,null,null,null,null},
-                                                                        {null,null,null,null,null}};
 
 
 

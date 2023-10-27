@@ -2,7 +2,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public class Form {
-    private Block [][] blockListe = new Block[5][5];
+    private Block [] blockListe = new Block[4];
 
     protected int [] zentrum;
 
@@ -52,8 +52,8 @@ public class Form {
 
 
 
-    public Form() {
-
+    public Form(Block [] blockListe) {
+        this.blockListe = blockListe;
     }
 
     public Form(Form form, Color farbe){
@@ -64,15 +64,13 @@ public class Form {
 
     }
 
-    private void kopiere_Bloecke (Block [][] blockListe){
-        for (int i = 0;i<5;i++){
-            for (int j =0;j<5;j++) {
-                if (blockListe[i][j] != null) {
-                    if (blockListe[i][j] instanceof ExplosionBlock){
-                        this.blockListe[i][j] = new ExplosionBlock(blockListe[i][j].getX(), blockListe[i][j].getY());
-                    }else {
-                        this.blockListe[i][j] = new Block(blockListe[i][j].getX(), blockListe[i][j].getY());
-                    }
+    private void kopiere_Bloecke(Block[] blockListe) {
+        for (int i = 0; i < 4; i++) {
+            if (blockListe[i] != null) {
+                if (blockListe[i] instanceof ExplosionBlock) {
+                    this.blockListe[i] = new ExplosionBlock(blockListe[i].getX(), blockListe[i].getY());
+                } else {
+                    this.blockListe[i] = new Block(blockListe[i].getX(), blockListe[i].getY());
                 }
             }
         }
@@ -80,33 +78,30 @@ public class Form {
 
 
 
-    public void nachruecken(int distanz){
-        for (Block [] reihe: this.getBlockListe()){
-            for (Block block: reihe){
-                if (block!= null){
-                    block.setLocation(block.getX(),block.getY() +distanz);
-                }
+    public void nachruecken(int distanz) {
+        for (Block block : this.getBlockListe()) {
+            if (block != null) {
+                block.setLocation(block.getX(), block.getY() + distanz);
             }
         }
     }
 
 
 
-    public Block get_untersten_Block(){
+
+    public Block get_untersten_Block() {
         Block untersterBlock = null;
-        for (Block [] reihe: blockListe){
-            for (Block block: reihe){
-                if (block!= null){
-                    if (untersterBlock == null || untersterBlock.getY() < block.getY()) {
-                        untersterBlock = block;
-                    }
+        for (Block block : blockListe) {
+            if (block != null) {
+                if (untersterBlock == null || untersterBlock.getY() < block.getY()) {
+                    untersterBlock = block;
                 }
             }
         }
         return untersterBlock;
     }
 
-    public Block[][] getBlockListe() {
+    public Block[] getBlockListe() {
         return blockListe;
     }
 
